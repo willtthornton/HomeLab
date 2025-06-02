@@ -1,19 +1,16 @@
-```markdown
-# HomeLaboratory IT Documentation
-This repository contains documentation and configurations for my Home Lab.
-The primary goal of the home lab is to practice fundamental IT skills and document the learning process.
-Additional detailed notes can be found on my Notion page: [[Will's Home Lab](https://honorable-billboard-59f.notion.site/Will-s-Home-Laboratory-1f0d3bd055558070930fcce77c35f07f)]
+# Will’s Home Lab (Public)
 
-## Current Hardware:
-* MacBook Pro 2016: [fill specs]
-* Raspberry Pi 4
-* Managed Switch
-* Xfinity Gateway
-* Router
+This repository documents the setup, configuration, and evolution of my home IT lab. The primary goal is to practice and demonstrate fundamental IT skills, including network design, system administration, and professional documentation.
 
-## Planned Projects:
-* Build Network Services Hub
-* Web Server Setup
-* File Server on Raspberry Pi
-* Proxy Server / AdBlocker on Raspberry Pi
-```
+The first major project, **Home Network Segmentation with VLANs**, is now complete. This project involved designing and implementing a secure, segmented home network using VLANs to isolate trusted devices, IoT hardware, gaming consoles, and a dedicated lab environment. The project successfully achieved a high-performance network, overcoming initial hardware instabilities through systematic troubleshooting. The final architecture provides complete traffic isolation and robust administrative access.
+
+> [!NOTE]
+> For privacy and security, specific device models, IP addresses, and network names have been generalized or replaced with common examples. The focus is on demonstrating the network design, configuration methodology, and technical skills involved.
+
+---
+
+## Project Documentation
+
+* **[Setup & Configuration Guide](./setup_guide.md):** Detailed, step-by-step instructions for configuring the router and switch for the final, stable network architecture.
+
+* **[Troubleshooting & Design Notes](./troubleshooting_notes.md):** A summary of the initial project plan, the troubleshooting journey, and the diagnostic steps that led to the final network design.
