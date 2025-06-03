@@ -39,8 +39,8 @@ The primary goal was to move from a flat home network to a segmented architectur
 | `1` | **Management** | `192.168.1.0/24` | `192.168.1.1` | `192.168.1.100-150` | Secure access to network hardware |
 | `10` | **Main** | `192.168.10.0/24` | `192.168.10.1` | `192.168.10.100-150` | Trusted personal devices |
 | `20` | **Gaming** | `192.168.20.0/24` | `192.168.20.1` | `192.168.20.100-150` | Isolated gaming traffic |
-| `30` | **IoT** | `192.168.30.0/24` | `192.168.30.1` | `192.168.30.100-150` | Untrusted smart home devices |
-| `40` | **Lab** | `192.168.40.0/24` | `192.168.40.1` | `192.168.40.100-150` | Experimental services and development |
+| `30` | **TV** | `192.168.30.0/24` | `192.168.30.1` | `192.168.30.100-150` | Smart TV streaming |
+| `40` | **IoT** | `192.168.40.0/24` | `192.168.40.1` | `192.168.40.100-150` | Untrusted smart home devices |
 
 ---
 
