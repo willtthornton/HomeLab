@@ -28,8 +28,8 @@ This guide details the final, stable configuration for the segmented home networ
 | --- | --- | --- |
 | 10 | `lan1.10` | `br-main` |
 | 20 | `lan1.20` | `br-gaming` |
-| 30 | `lan1.30` | `br-iot` |
-| 40 | `lan1.40` | `br-lab` |
+| 30 | `lan1.30` | `br-tv` |
+| 40 | `lan1.40` | `br-iot` |
 3.  **Create Network Interfaces:**
     * Navigate to the **Interfaces** tab and click `Add new interface...`.
     * Create a new interface for each VLAN, using the parameters in the table below. For each, set the **Protocol** to `Static address`, assign the correct **Device** (bridge), and configure the **IPv4 address** and **Netmask**. Then, under the **DHCP Server** tab, set up the DHCP server.
@@ -38,8 +38,8 @@ This guide details the final, stable configuration for the segmented home networ
 | --- | --- | --- | --- | --- |
 | `MAIN_VLAN` | `br-main` | `192.168.10.1` | `255.255.255.0` | `100-150` |
 | `GAMING_VLAN` | `br-gaming` | `192.168.20.1` | `255.255.255.0` | `100-150` |
-| `IOT_VLAN` | `br-iot` | `192.168.30.1` | `255.255.255.0` | `100-150` |
-| `LAB_VLAN` | `br-lab` | `192.168.40.1` | `255.255.255.0` | `100-150` |
+| `TV_VLAN` | `br-tv` | `192.168.30.1` | `255.255.255.0` | `100-150` |
+| `IOT_VLAN` | `br-iot` | `192.168.40.1` | `255.255.255.0` | `100-150` |
 4.  **Configure Wireless SSIDs:**
     * Navigate to **Network → Wireless**.
     * Create an SSID for management assigned to the `lan` network.
@@ -70,11 +70,11 @@ This guide details the final, stable configuration for the segmented home networ
     * Under **VLAN Membership**, configure each port based on the table below. `T` = **Tagged**, `U` = **Untagged**.
     * Under **Port PVID**, set the Port VLAN ID for each port. The **PVID** dictates which VLAN any incoming *untagged* traffic is assigned to.
 
-| Port | Purpose | VLAN 1 (Mgmt) | VLAN 10 (Main) | VLAN 20 (Game) | VLAN 30 (IoT) | VLAN 40 (Lab) | **PVID** |
+| Port | Purpose | VLAN 1 (Mgmt) | VLAN 10 (Main) | VLAN 20 (Game) | VLAN 30 (TV) | VLAN 40 (IoT) | **PVID** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Lab Access | -- | -- | -- | -- | **U** | **40** |
+| 1 | Intended for future use | -- | -- | -- | -- | -- | **1** |
 | 2 | Gaming Access | -- | -- | **U** | -- | -- | **20** |
-| 3 | Main Access | -- | **U** | -- | -- | -- | **10** |
+| 3 | TV Access | -- | **U** | -- | -- | -- | **30** |
 | 4 | Management Link | **U** | -- | -- | -- | -- | **1** |
 | 5 | **VLAN Trunk Link** | **U** | **T** | **T** | **T** | **T** | **1** |
 3.  **Apply** all settings and save the configuration on the switch.
@@ -89,8 +89,8 @@ Final verification was performed to ensure all project goals were met.
 | **Management** | Connect to management SSID or physical port 4. | Get `192.168.1.x` IP. Access router and switch admin. | ✅ |
 | **Main** | Connect to main SSID or physical port 3. | Get `192.168.10.x` IP. Access internet. | ✅ |
 | **Gaming** | Connect console to physical port 2. | Get `192.168.20.x` IP. Access internet. | ✅ |
-| **IoT** | Connect Speaker to IoT SSID. | Get `192.168.30.x` IP. Access internet. | ✅ |
-| **Lab** | Connect Pi to physical port 1. | Get `192.168.40.x` IP. Access internet. | ✅ |
+| **TV** | Connect TV to physical port 3. | Get `192.168.30.x` IP. Access internet. | ✅ |
+| **IoT** | Connect Speaker to IoT SSID. | Get `192.168.40.x` IP. Access internet. | ✅ |
 | **Isolation** | From any non-management VLAN (10, 20, 30, 40)... | | |
 | | ...ping device in another VLAN (e.g., VLAN 10 -> 20) | **FAIL.** No inter-VLAN communication. | ✅ |
 | | ...ping router/switch management IPs (`192.168.1.x`) | **FAIL.** No access to management plane. | ✅ |
